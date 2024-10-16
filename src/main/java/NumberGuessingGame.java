@@ -34,13 +34,7 @@ public class NumberGuessingGame implements Game {
     @Override
     public StatusUpdate playerMove(Player player, String word, long time) {
         StatusUpdate update = new StatusUpdate();
-        int guess;
-        try {
-            guess = Integer.parseInt(word);
-        } catch (Exception e){
-            update.addMessage("something went wrong....");
-            return update;
-        }
+        int guess = Integer.parseInt(word);
 
         if (guess == number) {
             update.addMessage("Yay! " + player.getName() + " has guessed the number!");
