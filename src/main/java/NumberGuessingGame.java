@@ -34,8 +34,13 @@ public class NumberGuessingGame implements Game {
     @Override
     public StatusUpdate playerMove(Player player, String word, long time) {
         StatusUpdate update = new StatusUpdate();
+	if (word==null || word.isEmpty()) { // word is empty or null
+		update.addMessage(player, "You must guess a number!");
+		return update;
+	}        
+    try { 
         int guess = Integer.parseInt(word);
-
+	
         if (guess == number) {
             update.addMessage("Yay! " + player.getName() + " has guessed the number!");
             wasGuessed = true;
@@ -44,6 +49,9 @@ public class NumberGuessingGame implements Game {
         } else {
             update.addMessage(player, "Your guess is too low");
         }
+    } catch (NumberFormatException numbererr) { // word is not a number
+        update.addMessage(player, "You must guess a number!");
+    }
         return update;
     }
 
