@@ -1,0 +1,10 @@
+*   d51e5cd Merged and solved conflicts
+|\  
+| * ba81e6f added help feature
+* | 4e234a0 Added input validation checks, relocated MockGame
+| | * a36f00a Revert "added new feature"
+| |/  
+|/|   
+* | 9c84c04 added new feature
+|/  
+* e673ef8 Initial game implementation for one player
